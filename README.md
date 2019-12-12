@@ -2,6 +2,8 @@
 
 Kotlin !!
 
+![Kotlin](/doc/img/Kotlin.png)
+
 ### Getting Started Kotlin 
 
 Kotlin Koans 
