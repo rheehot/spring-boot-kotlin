@@ -59,6 +59,8 @@ ${variable} 처럼 {} 감싸는 걸 습관화하자!
 
 킹자바와 달리 enum은 soft keyword이다. 
 
+### Smart Cast
+타입 검사와 타입 캐스르를 조합 
 
 
 ## Functions
