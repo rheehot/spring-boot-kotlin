@@ -70,6 +70,10 @@ ${variable} 처럼 {} 감싸는 걸 습관화하자!
 - step : 증가 값 
 
 
+### Try
+
+코틀린에서는 try 키워드는 if, when과 마찬가지로 식이다. 
+
 ## Functions
 
 Function having two Int parameters with Int return type:
@@ -100,6 +104,12 @@ fun foo(bar: Int = 0, baz: Int) { /*...*/}
 foo(baz = 1) // The default value bar = 0 is used
 ```
 
+
+### 확장 함수
+
+확장할 클래스의 이름을 덧붙여 사용한다. 
+
+클래스 이름을 수신 객체 타입, 대상을 수신 객체라고 부른다. 
 
 
 
