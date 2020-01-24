@@ -62,6 +62,13 @@ ${variable} 처럼 {} 감싸는 걸 습관화하자!
 ### Smart Cast
 타입 검사와 타입 캐스르를 조합 
 
+### Iterator 
+
+- range : .. / in 를 사용한다. 
+- half-closed range : until를 사용한다. 
+- downTo : 역방향
+- step : 증가 값 
+
 
 ## Functions
 
