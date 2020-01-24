@@ -1,4 +1,4 @@
-package com.github.hotire.springbootkotlin.books.in_action
+package com.github.hotire.springbootkotlin.books.in_action.ex01
 
 data class Person(val name: String, val age: Int? = null)
 
