@@ -111,5 +111,5 @@ foo(baz = 1) // The default value bar = 0 is used
 
 클래스 이름을 수신 객체 타입, 대상을 수신 객체라고 부른다. 
 
-
+- 확장 함수는 오버라이딩할 수 없다.
 
