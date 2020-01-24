@@ -55,6 +55,11 @@ fun main() {
 다만 한글을 사용살 때 유니코드 변환 과정에서 unresolved reference 오류가 발생한다. 
 ${variable} 처럼 {} 감싸는 걸 습관화하자!
 
+### Enum
+
+킹자바와 달리 enum은 soft keyword이다. 
+
+
 
 ## Functions
 
