@@ -11,6 +11,12 @@ Kotlin Koans
 - reference : https://play.kotlinlang.org/koans/overview
 
 
+### Books
+
+- Kotlin In Action 
+https://www.manning.com/books/kotlin-in-action
+
+
 ## Basic Syntax
 
 - reference : https://kotlinlang.org/docs/reference/basic-syntax.html?&_ga=2.30814975.1316054976.1576165289-2032132519.1576165289#defining-functions
