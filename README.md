@@ -113,3 +113,11 @@ foo(baz = 1) // The default value bar = 0 is used
 
 - 확장 함수는 오버라이딩할 수 없다.
 
+
+### 구조 분해 선언 
+
+```
+infix fun Any.to(other: Any) = Pair(this, other)
+ val (number , name) = 1 to "one"
+```
+
