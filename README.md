@@ -121,3 +121,16 @@ infix fun Any.to(other: Any) = Pair(this, other)
  val (number , name) = 1 to "one"
 ```
 
+## Class / Interface 
+
+코틀린의 클래스, 인터페이스는 자바와 조금 다르다.
+
+인터페이스의 경우 프로퍼티 선언이 들어갈 수 있고, 기본적 선언이 public final 이다. 
+
+게다가 중첩 클래스는 기본적으로 내부 클래스가 아니다. 즉 외부 클래스에 대한 참조가 없다.
+
+extends / implements 가 아닌  ":" 을 붙이고 클래스 이름을 적는 것으로 처리한다.
+
+@Override 를 사용하지 않고 override 변경자를 꼭 사용해야 한다. 
+
+ 
