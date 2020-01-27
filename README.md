@@ -133,4 +133,4 @@ extends / implements 가 아닌  ":" 을 붙이고 클래스 이름을 적는 �
 
 @Override 를 사용하지 않고 override 변경자를 꼭 사용해야 한다. 
 
- 
+- 코틀린은 기본적으로 final클래스이기 때문에 상속을 허용하려면 Open을 붙인다.
