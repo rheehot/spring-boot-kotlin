@@ -140,3 +140,6 @@ extends / implements 가 아닌  ":" 을 붙이고 클래스 이름을 적는 �
 - final클래스의 경우 스마트 캐스트가 가능하다.
 
 
+### Internal 
+
+자바의 패키지와 비슷하게 internal를 통해 캡슐화를 제공한다. 
