@@ -164,3 +164,8 @@ sealed 변경자를 붙이면 하위 클래스 정의를 제한한다.
 ### Getter / Setter 
 
 게터에서는 field 값을 읽을 수만 있고, 세터에서는 field 값을 읽거나 쓸 수도 있다.
+
+### data
+
+class 앞에 data를 붙이면 equals / toString / hashcode를 프로퍼티를 고려해서 만들어진다. 
+
