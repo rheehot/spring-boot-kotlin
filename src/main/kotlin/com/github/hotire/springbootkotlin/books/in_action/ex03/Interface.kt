@@ -11,6 +11,7 @@ interface Focusable {
 }
 
 class Button : Clickable, Focusable {
+    
     override fun click() {
     }
 
