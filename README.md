@@ -230,3 +230,12 @@ map / filter 는 컬렉션을 즉시 생성한다.
 이는 오버헤드이기 때문에, asSequence()를 사용하자.
 
 -> asSequence는 자바의 Stream과 유사하다.
+
+
+### with / apply 
+
+with, apply를 사용해 수신 객체를 지정할 수 있다.
+
+둘의 차이는 apply는 항상 자신에게 전달된 객체, 수신 객체를 반환한다. 
+
+- apply는 빌더로 사용할 수 있다. 
