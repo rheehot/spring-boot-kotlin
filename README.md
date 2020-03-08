@@ -243,6 +243,8 @@ with, apply를 사용해 수신 객체를 지정할 수 있다.
 
 ## Type 
 
+### 플랫폼 타입 
 
+널 관련 정보를 알 수 없는 타입을 말한다.
 
 ## Operator & Convention 
