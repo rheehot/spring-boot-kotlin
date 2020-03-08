@@ -239,3 +239,10 @@ with, apply를 사용해 수신 객체를 지정할 수 있다.
 둘의 차이는 apply는 항상 자신에게 전달된 객체, 수신 객체를 반환한다. 
 
 - apply는 빌더로 사용할 수 있다. 
+
+
+## Type 
+
+
+
+## Operator & Convention 
