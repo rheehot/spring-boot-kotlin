@@ -300,3 +300,9 @@ interface Producer<out T> {
 ~~~
 : T 타입의 값을 생산할 수 있지만, T 타입의 값을 소비할 수 없다. 
  
+ 
+- <in T> == <? super T>
+
+- <out T> == <? exetends T>
+
+ 
