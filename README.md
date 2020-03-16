@@ -305,4 +305,10 @@ interface Producer<out T> {
 
 - <out T> == <? exetends T>
 
- 
+
+### Star Projection
+
+타입 정보가 없음을 표한함 
+
+- <*> == <out Any?>
+  
