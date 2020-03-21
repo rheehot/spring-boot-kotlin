@@ -321,3 +321,12 @@ interface Producer<out T> {
 
 ## Reflection 
  
+자바와 똑같다. 
+
+다만 방법이 2가지이다. 
+
+- java.lang.reflect 패키지 
+
+- kotlin.reflect 패키지 
+
+kotlin.reflect 패키지는 자바에 없는 프로퍼티, 널이 될 수 있는타입과 같은 코틀린 개념에 대한 리플렉션을 지원한다. 
