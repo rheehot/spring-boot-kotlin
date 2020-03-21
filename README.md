@@ -312,3 +312,7 @@ interface Producer<out T> {
 
 - <*> == <out Any?>
   
+  
+## Annotation 
+
+자바와 거의 똑같다.  
