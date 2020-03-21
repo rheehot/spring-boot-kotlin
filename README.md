@@ -315,4 +315,9 @@ interface Producer<out T> {
   
 ## Annotation 
 
-자바와 거의 똑같다.  
+자바와 거의 똑같다. 
+
+- Target에서 get / set 개념이 있다.
+
+## Reflection 
+ 
