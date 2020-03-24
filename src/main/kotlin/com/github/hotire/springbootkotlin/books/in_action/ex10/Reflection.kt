@@ -10,8 +10,6 @@ fun main() {
     val c = Reflection::class.java.kotlin;
     reflection.javaClass.kotlin;
 
-
-
     val custom = Reflection::class.findAnnotation<CustomSerializer>();
     Reflection::class.java.declaredFields
 }
