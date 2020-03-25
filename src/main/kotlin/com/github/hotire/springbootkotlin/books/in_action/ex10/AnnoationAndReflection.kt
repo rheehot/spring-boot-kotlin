@@ -2,7 +2,6 @@ package com.github.hotire.springbootkotlin.books.in_action.ex10
 
 import org.springframework.core.annotation.Order
 import java.lang.annotation.Inherited
-import kotlin.reflect.KClass
 import kotlin.reflect.full.declaredMemberProperties
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.superclasses
@@ -15,12 +14,6 @@ fun Any.getHash() : String  {
     }
     return toString()
 }
-
-fun KClass<*>.declaredMemberProperty(propertyName: String) : kotlin.reflect.KProperty1<out Any, Any?>? {
-    val s =  this.declaredMemberProperties.firstOrNull() { it.name == propertyName }
-    return s
-}
-
 
 interface HashAware {
     @Inherited
