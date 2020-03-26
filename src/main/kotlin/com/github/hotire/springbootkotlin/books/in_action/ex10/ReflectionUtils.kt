@@ -9,8 +9,10 @@ import kotlin.reflect.full.superclasses
 fun KClass<*>.declaredMemberProperty(propertyName: String) : kotlin.reflect.KProperty1<out Any, Any?>?
      = this.declaredMemberProperties.firstOrNull() { it.name == propertyName }
 
-inline fun <reified T : Annotation, R> findAnnotation(obj: Any, kProperty: KProperty<R>) : T? {
-    return kProperty.findAnnotation<T>() ?: obj::class.superclasses
+
+inline fun <reified T : Annotation, R> Any.findAnnotation(kProperty: KProperty<R>) : T? {
+    return kProperty.findAnnotation<T>() ?: this::class.superclasses
             .map { it.declaredMemberProperty(kProperty.name)?.findAnnotation<T>() }
             .firstOrNull()
 }
+
