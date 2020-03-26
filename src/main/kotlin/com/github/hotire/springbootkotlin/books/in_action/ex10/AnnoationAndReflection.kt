@@ -4,7 +4,6 @@ import org.springframework.core.annotation.Order
 import java.lang.annotation.Inherited
 import kotlin.reflect.full.declaredMemberProperties
 import kotlin.reflect.full.findAnnotation
-import kotlin.reflect.full.hasAnnotation
 import kotlin.reflect.full.superclasses
 import kotlin.reflect.KProperty as KProperty1
 
@@ -34,12 +33,8 @@ interface HashAware {
     fun getHash() : String {
         return this::class.declaredMemberProperties
                 .asSequence()
-                .map { it -> print(it.annotations)
-//                    println(findAnnotation(it))
-                    it
-                }
                 .filter { hasAnnotation(it)}
-                .map { getPrefix() + it.findAnnotation2<HashCode, Any?>(it)!!.order.value + it.call(this) }
+                .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this) }
                 .joinToString();
     }
 
