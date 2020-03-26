@@ -7,7 +7,6 @@ import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.superclasses
 import kotlin.reflect.KProperty as KProperty1
 
-@ExperimentalStdlibApi
 fun Any.getHash() : String  {
     if (this is HashAware) {
         return getHash()
@@ -22,14 +21,13 @@ interface HashAware {
     annotation class HashCode(val order: Order = Order())
 
     fun <R> findAnnotation(kProperty: KProperty1<R>) : HashCode? {
-        return kProperty.findAnnotation<HashCode>() ?: this::class.superclasses.map {
-            it.declaredMemberProperty(kProperty.name)?.findAnnotation<HashCode>();
-        }.firstOrNull()
+        return kProperty.findAnnotation<HashCode>() ?: this::class.superclasses
+                .map { it.declaredMemberProperty(kProperty.name)?.findAnnotation<HashCode>() }
+                .firstOrNull()
     }
 
     fun <R> hasAnnotation(kProperty: KProperty1<R>): Boolean = findAnnotation(kProperty) != null
 
-    @ExperimentalStdlibApi
     fun getHash() : String {
         return this::class.declaredMemberProperties
                 .asSequence()
@@ -48,18 +46,17 @@ interface PersonHashAware : HashAware {
     val age: Int
 }
 
-class Person2(override val name: String, override val age: Int) : PersonHashAware {
+class PersonEntity(override val name: String, override val age: Int) : PersonHashAware {
     val person: PersonHashAware = object:PersonHashAware {
         override val name: String
-            get() = this@Person2.name
+            get() = this@PersonEntity.name
         override val age: Int
-            get() = this@Person2.age
+            get() = this@PersonEntity.age
     }
 }
 
-@ExperimentalStdlibApi
 fun main() {
-    val p = Person2("hello", 1)
+    val p = PersonEntity("hello", 1)
     val hash = p.getHash();
     print(hash)
 }
