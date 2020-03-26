@@ -2,10 +2,22 @@ package com.github.hotire.springbootkotlin.books.in_action.ex10
 
 import org.springframework.core.annotation.Order
 import java.lang.annotation.Inherited
+import java.security.MessageDigest
 import kotlin.reflect.full.declaredMemberProperties
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.superclasses
 import kotlin.reflect.KProperty as KProperty1
+
+fun String.sha256(): String {
+    return hashString(this, "SHA-256")
+}
+
+private fun hashString(input: String, algorithm: String): String {
+    return MessageDigest
+            .getInstance(algorithm)
+            .digest(input.toByteArray())
+            .fold("", { str, it -> str + "%02x".format(it) })
+}
 
 fun Any.getHash() : String  {
     if (this is HashAware) {
@@ -34,7 +46,8 @@ interface HashAware {
                 .filter { hasAnnotation(it)}
                 .sortedBy { findAnnotation(it)!!.order.value }
                 .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this) }
-                .joinToString();
+                .joinToString()
+                .sha256();
     }
 
     fun getPrefix() : String = this::class.simpleName ?: ""

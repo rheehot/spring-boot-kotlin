@@ -13,6 +13,6 @@ internal class AnnotationAndReflectionKtTest {
         val result = person.getHash()
 
         // then
-        assertThat(result).isEqualTo("PersonEntity1hello, PersonEntity22");
+        assertThat(result).isEqualTo("c8708e6a15954b88499134b301a24b07a8cb6feb27023fe3013206b474445f4f");
     }
 }
