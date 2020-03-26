@@ -32,6 +32,7 @@ interface HashAware {
         return this::class.declaredMemberProperties
                 .asSequence()
                 .filter { hasAnnotation(it)}
+                .sortedBy { findAnnotation(it)!!.order.value }
                 .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this) }
                 .joinToString();
     }
