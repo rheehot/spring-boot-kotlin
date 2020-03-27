@@ -15,4 +15,19 @@ internal class AnnotationAndReflectionKtTest {
         // then
         assertThat(result).isEqualTo("c8708e6a15954b88499134b301a24b07a8cb6feb27023fe3013206b474445f4f");
     }
+
+    @Test
+    fun declaredMemberPropertyTest() {
+        // given
+        val person = object:HashAware {
+            val name = ""
+        }
+
+        // when
+        val property = person::class.declaredMemberProperty("name")
+
+
+        // then
+        assertThat(property?.name).isEqualTo("name")
+    }
 }
