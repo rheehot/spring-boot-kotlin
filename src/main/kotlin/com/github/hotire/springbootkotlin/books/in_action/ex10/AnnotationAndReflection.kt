@@ -32,7 +32,7 @@ interface HashAware {
     @Target(AnnotationTarget.PROPERTY)
     annotation class HashCode(val order: Order = Order())
 
-    fun <R> findAnnotation(kProperty: KProperty1<R>) : HashCode? {
+    public fun <R> findAnnotation(kProperty: KProperty1<R>) : HashCode? {
         return kProperty.findAnnotation<HashCode>() ?: this::class.superclasses
                 .map { it.declaredMemberProperty(kProperty.name)?.findAnnotation<HashCode>() }
                 .firstOrNull()
