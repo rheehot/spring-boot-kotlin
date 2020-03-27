@@ -69,10 +69,5 @@ class PersonEntity(override val name: String, override val age: Int) : PersonHas
     }
 }
 
-fun main() {
-    val p = PersonEntity("hello", 1)
-    val hash = p.getHash();
-    print(hash)
-}
 
 
