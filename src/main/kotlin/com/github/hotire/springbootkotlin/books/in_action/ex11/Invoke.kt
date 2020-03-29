@@ -7,4 +7,8 @@ class DependencyHandler {
     fun complie(coordinate: String) {
         println("Add dependency on ${coordinate}")
     }
+
+    operator fun invoke(body: DependencyHandler.() -> Unit) {
+        body()
+    }
 }
