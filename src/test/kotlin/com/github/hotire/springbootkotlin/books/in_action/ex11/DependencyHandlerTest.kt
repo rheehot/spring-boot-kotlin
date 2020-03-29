@@ -18,4 +18,20 @@ internal class DependencyHandlerTest {
         // then
         assertThat(result).contains(dependency)
     }
+
+    @Test
+    fun invoke() {
+        // given
+        val dependency = "test"
+        val dependencyHandler = DependencyHandler()
+
+        // when
+        dependencyHandler {
+            compile(dependency)
+        }
+        val result = dependencyHandler.dependencies
+
+        // then
+        assertThat(result).contains(dependency)
+    }
 }
