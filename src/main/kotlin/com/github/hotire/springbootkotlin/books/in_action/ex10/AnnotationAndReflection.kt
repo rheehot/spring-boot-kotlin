@@ -32,13 +32,13 @@ interface HashAware {
     @Target(AnnotationTarget.PROPERTY)
     annotation class HashCode(val order: Order = Order())
 
-    public fun <R> findAnnotation(kProperty: KProperty1<R>) : HashCode? {
+    public fun findAnnotation(kProperty: KProperty1<*>) : HashCode? {
         return kProperty.findAnnotation<HashCode>() ?: this::class.superclasses
                 .map { it.declaredMemberProperty(kProperty.name)?.findAnnotation<HashCode>() }
                 .firstOrNull()
     }
 
-    fun <R> hasAnnotation(kProperty: KProperty1<R>): Boolean = findAnnotation(kProperty) != null
+    fun  hasAnnotation(kProperty: KProperty1<*>): Boolean = findAnnotation(kProperty) != null
 
     fun getHash() : String {
         return this::class.declaredMemberProperties
