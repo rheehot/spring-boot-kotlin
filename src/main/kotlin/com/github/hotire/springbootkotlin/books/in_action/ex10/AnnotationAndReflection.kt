@@ -45,7 +45,7 @@ interface HashAware {
                 .asSequence()
                 .filter { hasAnnotation(it)}
                 .sortedBy { findAnnotation(it)!!.order.value }
-                .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this) }
+                .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this)?.getHash() }
                 .joinToString()
                 .sha256();
     }
