@@ -1,6 +1,5 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex10
 
-import org.springframework.core.annotation.Order
 import java.lang.annotation.Inherited
 import java.security.MessageDigest
 import kotlin.reflect.full.declaredMemberProperties
@@ -30,7 +29,7 @@ interface HashAware {
     @Inherited
     @Retention
     @Target(AnnotationTarget.PROPERTY)
-    annotation class HashCode(val order: Order = Order())
+    annotation class HashCode(val order: Int)
 
     public fun findAnnotation(kProperty: KProperty1<*>) : HashCode? {
         return kProperty.findAnnotation<HashCode>() ?: this::class.superclasses
@@ -44,8 +43,8 @@ interface HashAware {
         return this::class.declaredMemberProperties
                 .asSequence()
                 .filter { hasAnnotation(it)}
-                .sortedBy { findAnnotation(it)!!.order.value }
-                .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this)?.getHash() }
+                .sortedBy { findAnnotation(it)!!.order }
+                .map { getPrefix() + findAnnotation(it)!!.order + it.call(this)?.getHash() }
                 .joinToString()
                 .sha256();
     }
@@ -54,13 +53,14 @@ interface HashAware {
 }
 
 interface PersonHashAware : HashAware {
-    @HashAware.HashCode(Order(1))
+    @HashAware.HashCode(1)
     val name : String
-    @HashAware.HashCode(Order(2))
+    @HashAware.HashCode(2)
     val age: Int
 }
 
 class PersonEntity(override val name: String, override val age: Int) : PersonHashAware {
+    @HashAware.HashCode(3)
     val person: PersonHashAware = object:PersonHashAware {
         override val name: String
             get() = this@PersonEntity.name
