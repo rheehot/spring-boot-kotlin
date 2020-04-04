@@ -338,3 +338,5 @@ kotlin.reflect 패키지는 자바에 없는 프로퍼티, 널이 될 수 있는
 - typealias 지원 
 
 - onEach() 지원 
+
+- also 지원(apply와 다르게 this가 아닌 it을 사용한다.)
