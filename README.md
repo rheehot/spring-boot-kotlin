@@ -340,3 +340,8 @@ kotlin.reflect 패키지는 자바에 없는 프로퍼티, 널이 될 수 있는
 - onEach() 지원 
 
 - also 지원(apply와 다르게 this가 아닌 it을 사용한다.)
+
+
+### 코틀린 1.2 
+
+- kotlinOptions.warningsAsErrors = true 옵션을 주면 모든 경고를 오류로 처리한다. 
