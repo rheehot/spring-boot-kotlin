@@ -16,3 +16,16 @@ fun require(condition: Boolean) {
     contract { returns() implies condition }
     if (!condition) throw IllegalArgumentException()
 }
+
+
+interface Foo {
+    companion object {
+        @JvmField
+        val answer : Int = 42
+
+        @JvmStatic
+        fun sayHello() {
+
+        }
+    }
+}
