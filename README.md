@@ -352,3 +352,10 @@ kotlin.reflect 패키지는 자바에 없는 프로퍼티, 널이 될 수 있는
 - 동반 객체의 필드에 @JvmField를 붙이면 상위 클래스 or 인터페이스의 ps이 됟다. 
 
 - 동반 객체의 메소드에 @JvmStatic을 붙이면 상위 클래스 or 인터페이스의 ps이 된다. 
+
+
+## 코루틴과 Async / Await 
+
+### 코루틴 
+
+실행을 일시 중단(suspend) 하고 재개 (resume)할 수 있는 여러 진입 지점(entry point)를 허용하는 서브루틴이다. 
