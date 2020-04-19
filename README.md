@@ -356,6 +356,42 @@ kotlin.reflect 패키지는 자바에 없는 프로퍼티, 널이 될 수 있는
 
 ## 코루틴과 Async / Await 
 
+함수의 실행 상태를 저장하면 다시 시작할 수 있지 않을까??? 
+
+- Continuation Passing Style
+
+```kotlin
+
+@SinceKotlin("1.3")
+public interface Continuation<in T> {
+    /**
+     * The context of the coroutine that corresponds to this continuation.
+     */
+    public val context: CoroutineContext
+
+    /**
+     * Resumes the execution of the corresponding coroutine passing a successful or failed [result] as the
+     * return value of the last suspension point.
+     */
+    public fun resumeWith(result: Result<T>)
+
+    @SinceKotlin("1.3")
+    @InlineOnly
+    public inline fun <T> Continuation<T>.resume(value: T): Unit =
+        resumeWith(Result.success(value))
+    
+    /**
+     * Resumes the execution of the corresponding coroutine so that the [exception] is re-thrown right after the
+     * last suspension point.
+     */
+    @SinceKotlin("1.3")
+    @InlineOnly
+    public inline fun <T> Continuation<T>.resumeWithException(exception: Throwable): Unit =
+        resumeWith(Result.failure(exception))
+
+}
+```
+
 ### 코루틴 
 
 실행을 일시 중단(suspend) 하고 재개 (resume)할 수 있는 여러 진입 지점(entry point)를 허용하는 서브루틴이다. 
