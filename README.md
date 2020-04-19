@@ -373,3 +373,11 @@ Deffered는 Job을 상속했기에 사실상 큰 차이는 없다. 유일한 차
 Job은 Deffered<Unit> 이라고 볼 수 있다. 따라서 async는 코드 블록을 비동기로 실행할 수 있고 await를 사용해서 기다렸다가 결과 값을 얻어 낼수 있다. 
 
 - 스레드를 여러개 사용하는 병렬 처리와 달리 async 함수들은 하나의 메인 스레드로 실행된다. 
+
+
+### CoroutineScope 
+
+코루틴 사용 범위 정의 
+
+모든 코루틴은 CoroutineScope를 상속한다. 
+
