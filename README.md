@@ -396,6 +396,9 @@ public interface Continuation<in T> {
 }
 ```
 
+- [코루틴은 어떻게 동작하는가??](https://www.youtube.com/watch?v=usaD7HyN598)
+
+
 ### 코루틴 
 
 실행을 일시 중단(suspend) 하고 재개 (resume)할 수 있는 여러 진입 지점(entry point)를 허용하는 서브루틴이다. 
