@@ -1,7 +1,6 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex13
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.time.ZonedDateTime
 
 fun now() = ZonedDateTime.now().toInstant().toEpochMilli();
@@ -14,6 +13,25 @@ fun launchInGlobalScope() {
     }
 }
 
+fun runBlockingEx() {
+    runBlocking {
+        launch {
+            log("1")
+            yield()
+            log("3")
+            yield()
+        }
+        log("after first launch")
+        launch {
+            log("2")
+            delay(1L)
+            log("4")
+            delay(1L)
+        }
+        log("after second launch")
+    }
+}
+
 fun main() {
     log("main() started")
     launchInGlobalScope()
@@ -21,4 +39,7 @@ fun main() {
 
     // if non-sleep, launchInGlobalScope is not executed
     Thread.sleep(100)
+
+
+    runBlockingEx()
 }
