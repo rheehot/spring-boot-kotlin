@@ -360,6 +360,10 @@ kotlin.reflect 패키지는 자바에 없는 프로퍼티, 널이 될 수 있는
 
 - Continuation Passing Style
 
+StateMachine 에 의해 코드의 실행 위치 처리 
+
+함수에 대한 진입/지출 시 상태를 저장/복원하기 위한 코드 
+
 ```kotlin
 
 @SinceKotlin("1.3")
