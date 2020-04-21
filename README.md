@@ -427,3 +427,8 @@ Job은 Deffered<Unit> 이라고 볼 수 있다. 따라서 async는 코드 블록
 ### GlobalScope 
 
 CoroutineScope을 상속받는다. 전역에서 하나로 동작한다. (object 싱글톤)
+
+
+### Suspend
+
+위에 설명한 CPS, StateMachine을 통해 코드를 실행한다.
