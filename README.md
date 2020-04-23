@@ -2,6 +2,10 @@
 
 Kotlin !!
 
+### Study 
+
+https://github.com/orgs/bakery-blueprint/teams/kotlin 
+
 ![Kotlin](/doc/img/Kotlin.png)
 
 ### Getting Started Kotlin 
