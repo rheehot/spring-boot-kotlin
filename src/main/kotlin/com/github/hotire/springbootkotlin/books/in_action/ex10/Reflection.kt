@@ -1,6 +1,5 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex10
 
-import kotlin.reflect.KAnnotatedElement
 import kotlin.reflect.full.findAnnotation
 
 class Reflection(val name: String)
